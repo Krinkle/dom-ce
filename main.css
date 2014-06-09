@@ -1,0 +1,82 @@
+html {
+    background: #fff;
+    margin: 0;
+    padding: 2em 1em;
+}
+
+/* Blocks */
+
+head,
+title,
+style,
+body,
+p,
+ul,
+li,
+
+strong,
+em,
+b,
+i {
+    display: block;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    padding: 0.2em 0.5em;
+    margin: 2em 1em;
+    position: relative;
+}
+
+head:before,
+title:before,
+style:before,
+body:before,
+p:before,
+ul:before,
+li:before,
+
+strong:before,
+em:before,
+b:before,
+i:before {
+    content: "<>";
+    display: block;
+    position: absolute;
+    top: -1.5em;
+    left: -1.5em;
+    font-family: monospace;
+    background: #f2f2f2;
+    padding: 0.2em 0.3em;
+    border: 1px solid #aaa;
+}
+
+head:before { content: "<head>"; }
+title:before { content: "<title>"; }
+style:before { content: "<style>"; }
+body:before { content: "<body>"; }
+p:before { content: "<p>"; }
+ul:before { content: "<ul>"; }
+li:before { content: "<li>"; }
+
+strong:before { content: "<strong>"; }
+em:before { content: "<em>"; }
+b:before { content: "<b>"; }
+i:before { content: "<i>"; }
+
+/* Blocks: Code */
+
+style {
+    font-family: monospace;
+    padding: 0.5em 1em;
+    background-color: #f2f2f2;
+    border-color: #ccc;
+}
+
+/* Inline blocks */
+
+strong,
+em,
+b,
+i {
+    display: inline-block;
+
+}
