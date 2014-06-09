@@ -1,15 +1,17 @@
 html {
-    background: #fff;
-    margin: 0;
-    padding: 2em 1em;
+	background: #fff;
+	margin: 0;
+	font: normal 14px/1.5 sans-serif;
+	padding: 2em 1em;
 }
-
-/* Blocks */
 
 head,
 title,
 style,
 body,
+div,
+h1,
+h2,
 p,
 ul,
 li,
@@ -17,19 +19,23 @@ li,
 strong,
 em,
 b,
-i {
-    display: block;
-    background: #fff;
-    border: 1px solid #f2f2f2;
-    padding: 0.2em 0.5em;
-    margin: 2em 1em;
-    position: relative;
+i,
+a {
+	display: block;
+	background: #fff;
+	border: 1px solid #f2f2f2;
+	padding: 0.2em 0.5em;
+	margin: 2em 1rem;
+	position: relative;
 }
 
 head:before,
 title:before,
 style:before,
 body:before,
+div:before,
+h1:before,
+h2:before,
 p:before,
 ul:before,
 li:before,
@@ -37,22 +43,28 @@ li:before,
 strong:before,
 em:before,
 b:before,
-i:before {
-    content: "<>";
-    display: block;
-    position: absolute;
-    top: -1.5em;
-    left: -1.5em;
-    font-family: monospace;
-    background: #f2f2f2;
-    padding: 0.2em 0.3em;
-    border: 1px solid #aaa;
+i:before,
+a:before,
+
+br:before {
+	content: "<>";
+	display: block;
+	position: absolute;
+	top: -1.3rem;
+	left: -1.3rem;
+	font: normal normal normal 0.8rem/1.2 monospace;
+	background: #f2f2f2;
+	padding: 0.2em 0.3em;
+	border: 1px solid #aaa;
 }
 
 head:before { content: "<head>"; }
 title:before { content: "<title>"; }
 style:before { content: "<style>"; }
 body:before { content: "<body>"; }
+div:before { content: "<div>"; }
+h1:before { content: "<h1>"; }
+h2:before { content: "<h2>"; }
 p:before { content: "<p>"; }
 ul:before { content: "<ul>"; }
 li:before { content: "<li>"; }
@@ -61,14 +73,17 @@ strong:before { content: "<strong>"; }
 em:before { content: "<em>"; }
 b:before { content: "<b>"; }
 i:before { content: "<i>"; }
+a:before { content: "<a>"; }
+
+br:before { content: "<br>"; }
 
 /* Blocks: Code */
 
 style {
-    font-family: monospace;
-    padding: 0.5em 1em;
-    background-color: #f2f2f2;
-    border-color: #ccc;
+	font-family: monospace;
+	padding: 0.5em 1em;
+	background-color: #f2f2f2;
+	border-color: #ccc;
 }
 
 /* Inline blocks */
@@ -76,7 +91,31 @@ style {
 strong,
 em,
 b,
-i {
-    display: inline-block;
+i,
+a {
+	display: inline-block;
+	margin: 0;
+}
 
+
+br {
+	/* <br> is collapsed by default, give it content to
+	   enable use of :before */
+	content: "";
+	display: block;
+}
+
+strong:before,
+em:before,
+b:before,
+i:before,
+a:before,
+
+br:before {
+	display: inline-block;
+	vertical-align: top;
+	position: static;
+	top: auto;
+	left: auto;
+	margin-right: 0.5em;
 }
